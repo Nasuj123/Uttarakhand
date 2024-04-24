@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title> Landing Web Page </title>
+    <style> 
+    body{
+    margin:0;
+    padding:0;
+    }
+    .header{
+    background-color:black;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    }
+    .prev:hover,.next:hover{
+     background-color: rgba(0,0,0,0.8);
+    }
+    .column{
+    float:left;
+    width:33.33%;
+    padding: 5px;
+    }
+    .column img{
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    }
+    .column img:hover{
+    opacity: 1;
+    }
+
+    .row:after{
+    content: "";
+    display: table;
+    clear: both;
+
+
+    }
+    </style>
+</head>
+
+<body> 
+    <div class="header">
+    <h1> 
+        Landing Web Page Uttrakhand
+    </h1>
+    </div>
+    <div class="slideshow-container">
+        <div class="mySlides fade">  
+      <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2021/12/Laxman-Jhula-Rishikesh.jpg?resize=1200%2C800&ssl=1" alt="Slide1"> 
+        </div>
+        <div class="mySlides fade"> 
+        <img src="https://deih43ym53wif.cloudfront.net/Swargarohini-trek-uttarakhand-blooming-valley-this-chakratirth-india-flowers-shutterstock_1687487230.jpg_2308a61b17.jpg" alt="Slide2">
+        </div>
+        <div class="mySlides fade"> 
+            <img src="https://media1.thrillophilia.com/filestore/v959bw2xevky779rgm09lwm6qq2v_Auli%20lake.jpg?w=305&h=230&dpr" alt="Slide 3">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)"> &#10094; </a>
+        <a class="next" onclick="plusSlides(1)"> &#10095; </a> 
+
+    </div>
+    <br>
+    <div class="row"> 
+        <div class="column"> 
+          <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2021/12/Laxman-Jhula-Rishikesh.jpg?resize=1200%2C800&ssl=1" alt="Place1" onclick="currentSlides(1)">
+        </div>
+        <div class="column"> 
+            <img src="https://deih43ym53wif.cloudfront.net/Swargarohini-trek-uttarakhand-blooming-valley-this-chakratirth-india-flowers-shutterstock_1687487230.jpg_2308a61b17.jpg" alt="Place2" onclick="currentSlides(2)">   
+        </div>
+        <div class="Column"> 
+            <img src="https://media1.thrillophilia.com/filestore/v959bw2xevky779rgm09lwm6qq2v_Auli%20lake.jpg?w=305&h=230&dpr" alt="Place3" onclick="currentSlides(3)">
+        </div>
+    </div>
+    <script> 
+     var slideIndex=1;
+     showSlides(slideIndex);
+     function plusSlides(n){
+     showSlides(slideIndex+=n);
+     }
+     function currentSlides(n){
+     showSlides(slideIndex=n);
+     }
+     function showSlides(n){
+     var i;
+     var slides=document.getElementsByClassName("mySlides");
+     var dots=document.getElementsByClassName("dot");
+     if(n>slides.length){
+     slideIndex=1;
+     }
+     if(n<1){
+     slideIndex=slides.length;
+     }
+     for(i=0;i<slides.length;i++){
+     slides[i].style.display="none";
+     }
+     for(i=0;i<dots.length;i++){
+     dots[i].className=dots[i].className.replace("active","");
+     }
+     slides[slideIndex-1].style.display="block";
+     dots[slideIndex-1].className+="active";
+     }
+
+    </script>
+</body>
